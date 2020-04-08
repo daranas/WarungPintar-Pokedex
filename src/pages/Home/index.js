@@ -17,22 +17,6 @@ class HomePage extends Component {
     this.fetchPokemonData();
   }
 
-  // fetchPokemon = async () => {
-  //   let offsetNum = 0;
-  //   let regexPat = /\/pokemon\/(\d+)\//;
-  //   this.setState({ pokemons: [] });
-
-  //   const res = await axios.get(
-  //     `https://pokeapi.co/api/v2/pokemon/?limit=12&offset=${offsetNum}`
-  //   );
-  //   let pokemon = res.data.results;
-  //   pokemon.map(pokemon => {
-  //     let id = pokemon.url.match(regexPat)[1];
-  //     return (pokemon["id"] = id);
-  //   });
-  //   this.setState({ pokemons: pokemon });
-  // };
-
   fetchMoreData = () => {
     const sumLength = this.state.pokemons.length + this.state.length;
     this.setState({ loading: <h4>Loading...</h4> });
