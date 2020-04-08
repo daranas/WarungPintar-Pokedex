@@ -8,11 +8,16 @@ body {
 }
 
 .pokeWrapper {
-  margin: 0 auto;
+  margin: 5rem auto 0;
   background: #fff;
-  max-width: 980px;
+  max-width: 1020px;
   border-radius: .5rem;
   box-shadow: 0 4px 25px 0 rgba(0,0,0,.1);
+}
+
+.ui.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .App-logo {
