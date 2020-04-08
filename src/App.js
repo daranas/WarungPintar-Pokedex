@@ -1,25 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
+import { Grid, Container } from 'semantic-ui-react'
+
+// components
+import Home from '../src/pages/Home';
+
+// css
+import 'semantic-ui-css/semantic.min.css';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="pokeWrapper">
+        <Grid>
+          <Grid.Row>
+            <Grid.Column mobile={16} tablet={8} computer={4}>
+              Sidebar
+            </Grid.Column>
+
+            <Grid.Column mobile={16} tablet={8} computer={12}>
+              <Container>
+                <Switch>
+                  <Route exact path='/' component={Home}/>
+                </Switch>
+              </Container>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </div>
+    </Router>
   );
 }
 

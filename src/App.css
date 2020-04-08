@@ -1,5 +1,18 @@
-.App {
-  text-align: center;
+body {
+  background: #f8f8f8;
+  color: #626262;
+  font-family: "Helvetica Neue",Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.pokeWrapper {
+  margin: 0 auto;
+  background: #fff;
+  max-width: 980px;
+  border-radius: .5rem;
+  box-shadow: 0 4px 25px 0 rgba(0,0,0,.1);
 }
 
 .App-logo {
