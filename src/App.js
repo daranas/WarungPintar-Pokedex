@@ -4,6 +4,7 @@ import { Grid, Container } from 'semantic-ui-react'
 
 // components
 import Home from '../src/pages/Home';
+import Search from '../src/components/Search'
 
 // css
 import 'semantic-ui-css/semantic.min.css';
@@ -24,7 +25,7 @@ class App extends Component {
           <Grid>
             <Grid.Row>
               <Grid.Column mobile={16} tablet={8} computer={4}>
-                Sidebar
+                <Search />
               </Grid.Column>
   
               <Grid.Column mobile={16} tablet={8} computer={12}>
