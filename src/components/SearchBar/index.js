@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import axios from "axios";
 import { Search } from 'semantic-ui-react';
+// css
+import './index.css'
 
 class SearchBar extends Component {
 
@@ -21,7 +23,6 @@ class SearchBar extends Component {
     this.setState({ isLoading: true, value })
 
     setTimeout(() => {
-
       const re = new RegExp(_.escapeRegExp(this.state.value), 'i')
       const isMatch = (result) => re.test(result.title)
 
@@ -58,6 +59,7 @@ class SearchBar extends Component {
 
     return (
       <Search
+        aligned='right'
         loading={isLoading}
         onResultSelect={this.handleResultSelect}
         onSearchChange={_.debounce(this.handleSearchChange, 500, {
@@ -66,6 +68,7 @@ class SearchBar extends Component {
         results={results}
         value={value}
         {...this.props}
+        placeholder="Search Pokemon..."
       />
     )
   }

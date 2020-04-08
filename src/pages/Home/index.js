@@ -45,7 +45,7 @@ class HomePage extends Component {
   }
 
   render() {
-    const { pokemons } = this.state;
+    const { pokemons, loading } = this.state;
 
     return (
       <div>
@@ -53,7 +53,7 @@ class HomePage extends Component {
           dataLength={this.state.pokemons.length}
           next={this.fetchMoreData}
           hasMore={true}
-          loader={this.state.loading}
+          loader={loading}
           endMessage={<p>Yay! You have seen it all</p>}
           style={{ overflow: 'inherit' }}
         >

@@ -1,0 +1,3 @@
+.pokeWrapper .ui.search>.results .result .title {
+  text-transform: capitalize;
+}
