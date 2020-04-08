@@ -22,25 +22,15 @@ class App extends Component {
     return (
       <Router>
         <div className="pokeWrapper">
-          <Grid>
-            <Grid.Row>
-              <Grid.Column mobile={16} tablet={8} computer={4}>
-                <Search />
-              </Grid.Column>
-  
-              <Grid.Column mobile={16} tablet={8} computer={12}>
-                <Container>
-                  <Switch>
-                    <Route
-                      exact
-                      path="/"
-                      render={() => <Home filterList={this.state.setFilters} />}
-                    />
-                  </Switch>
-                </Container>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
+          <Container>
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={() => <Home filterList={this.state.setFilters} />}
+              />
+            </Switch>
+          </Container>
         </div>
       </Router>
     );
