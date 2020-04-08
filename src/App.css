@@ -7,10 +7,9 @@ body {
   line-height: 1.4;
 }
 .pokeWrapper {
-  margin: 5rem auto 0;
+  margin: 0 auto;
   background: #fff;
   max-width: 960px;
-  border-radius: .5rem;
   box-shadow: 0 4px 25px 0 rgba(0,0,0,.1);
 }
 .ui.container {
