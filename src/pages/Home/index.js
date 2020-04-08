@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import axios from "axios";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import PokeGrid from '../../components/PokeCard';
+import API from '../../helpers/API'
 
 class HomePage extends Component {
   constructor(props) {
@@ -27,9 +27,7 @@ class HomePage extends Component {
     const setOffset = offset ? offset : 0;
     let regexPat = /\/pokemon\/(\d+)\//;
 
-    const res = await axios.get(
-      `https://pokeapi.co/api/v2/pokemon/?limit=${this.state.length}&offset=${setOffset}`
-    );
+    const res = await API.get(`/pokemon/?limit=${this.state.length}&offset=${setOffset}`);
 
     let pokemon = res.data.results;
     pokemon.map(pokemon => {

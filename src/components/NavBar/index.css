@@ -4,5 +4,6 @@
   margin-bottom: 15px;
 }
 .pokeWrapper .ui.attached.menu:not(.tabular) {
+  border-top: 0;
   border-color: rgba(34,36,38,.1);
 }

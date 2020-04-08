@@ -5,3 +5,6 @@
   text-transform: capitalize;
   text-align: center;
 }
+.pokeWrapper .ui.card>.image {
+  min-height: 212px;
+}

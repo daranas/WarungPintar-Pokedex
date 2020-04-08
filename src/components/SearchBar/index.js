@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import axios from "axios";
 import { Search } from 'semantic-ui-react';
+import API from '../../helpers/API'
 // css
 import './index.css'
 
@@ -40,9 +40,7 @@ class SearchBar extends Component {
   fetchPokemon = async () => {
     this.setState({ pokemons: [] });
 
-    const res = await axios.get(
-      `https://pokeapi.co/api/v2/pokemon/?limit=2000`
-    );
+    const res = await API.get(`/pokemon/?limit=2000`);
     let pokemon = res.data.results;
     let setPokemon = []
     pokemon.map(pokemon => {
