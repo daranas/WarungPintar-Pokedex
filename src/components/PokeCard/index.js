@@ -5,8 +5,8 @@ const PokeCard = props => (
   <Grid>
     <Grid.Row>
       {props.pokemonData.map(({name, id}) => (
-        <Grid.Column mobile={8} tablet={4} computer={4}>
-          <Card key={id}>
+        <Grid.Column key={id} mobile={8} tablet={4} computer={4}>
+          <Card>
             <Image src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} wrapped ui={false} />
             <Card.Content>
               <Card.Header>{name}</Card.Header>

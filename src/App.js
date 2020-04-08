@@ -4,7 +4,7 @@ import { Grid, Container } from 'semantic-ui-react'
 
 // components
 import Home from '../src/pages/Home';
-import Search from '../src/components/Search'
+import Search from './components/SearchBar'
 
 // css
 import 'semantic-ui-css/semantic.min.css';

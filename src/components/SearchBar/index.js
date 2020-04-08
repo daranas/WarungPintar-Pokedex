@@ -3,22 +3,23 @@ import _ from 'lodash';
 import axios from "axios";
 import { Search } from 'semantic-ui-react';
 
-const initialState = {
-  isLoading: false,
-  pokemons: [],
-  results: [],
-  value: ''
-}
+class SearchBar extends Component {
 
-export default class SearchExampleStandard extends Component {
-
-  state = initialState
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: false,
+      pokemons: [],
+      results: [],
+      value: ''
+    };
+  }
 
   handleResultSelect = (e, { result }) => this.setState({ value: result.title })
 
   handleSearchChange = (e, { value }) => {
     this.setState({ isLoading: true, value })
-    
+
     setTimeout(() => {
 
       const re = new RegExp(_.escapeRegExp(this.state.value), 'i')
@@ -47,7 +48,7 @@ export default class SearchExampleStandard extends Component {
       let pokemonData = {
         title: pokemon.name
       }
-      setPokemon.push(pokemonData);
+      return setPokemon.push(pokemonData);
     });
     this.setState({ pokemons: setPokemon });
   };
@@ -69,3 +70,5 @@ export default class SearchExampleStandard extends Component {
     )
   }
 }
+
+export default SearchBar
