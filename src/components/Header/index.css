@@ -3,6 +3,16 @@
   background: #FECE3A;
   border-radius: .5rem .5rem 0 0;
 }
-.pokeWrapper .wp-header img {
+.pokeWrapper .wp-header .logo {
+  display: inline-block;
+}
+.pokeWrapper .wp-header .logo img {
   max-height: 100px;
+}
+.pokeWrapper .wp-header .pokeball {
+  float: right;
+  padding: 1.2rem;
+}
+.pokeWrapper .wp-header .pokeball img {
+  max-height: 70px;
 }
