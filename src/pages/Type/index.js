@@ -14,13 +14,11 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.location.search);
-    
     this.fetchPokemonData();
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.match.params.name !== this.props.match.params.name) {
+  componentDidUpdate(prevState) {
+    if (this.props.location.pathname !== prevState.location.pathname) {
       this.fetchPokemonData();
     }
   }

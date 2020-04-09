@@ -10,6 +10,7 @@ body {
   margin: 0 auto;
   background: #fff;
   max-width: 960px;
+  padding-bottom: 2rem;
   box-shadow: 0 4px 25px 0 rgba(0,0,0,.1);
 }
 .ui.container {

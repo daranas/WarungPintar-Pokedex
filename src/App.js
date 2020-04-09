@@ -4,6 +4,7 @@ import { Container } from 'semantic-ui-react'
 // components
 import Home from '../src/pages/Home';
 import Type from '../src/pages/Type';
+import Detail from '../src/pages/Detail';
 import Header from './components/Header';
 import NavBar from './components/NavBar'
 // css
@@ -23,6 +24,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/type/:name" component={Type} />
+              <Route exact path="/detail/:name" component={Detail} />
             </Switch>
           </Container>
         </div>
