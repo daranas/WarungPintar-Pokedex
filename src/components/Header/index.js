@@ -11,7 +11,7 @@ const Header = props => {
         <img src={props.logo} alt="Warung Pintar"/>
       </div>
       <div className="pokeball">
-        <img src={pokeBall} className="pokeball-logo"/>
+        <img src={pokeBall} className="pokeball-logo" alt="pokeball"/>
       </div>
     </header>
   );

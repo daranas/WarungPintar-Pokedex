@@ -27,9 +27,24 @@ class HomePage extends Component {
     const setOffset = offset ? offset : 0;
     let regexPat = /\/pokemon\/(\d+)\//;
 
-    const res = await API.get(`/pokemon/?limit=${this.state.length}&offset=${setOffset}`);
+    let currentUrlParams = new URLSearchParams(window.location.search);
+    let setParam = currentUrlParams.get("type");
 
+    let res = await API.get(`/pokemon/?limit=${this.state.length}&offset=${setOffset}`);
     let pokemon = res.data.results;
+
+    if (setParam) {
+      pokemon = [];
+      res =  await API.get(`/type/${setParam}/`);
+      res.data.pokemon.map(setData => {
+        let filterData = {
+          name: setData.pokemon.name,
+          url: setData.pokemon.url
+        }
+        pokemon.push(filterData)
+      });
+    }
+
     pokemon.map(pokemon => {
       let id = pokemon.url.match(regexPat)[1];
       return (pokemon["id"] = id);
