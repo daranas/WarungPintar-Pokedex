@@ -1,0 +1,17 @@
+.pokeWrapper .wp-header {
+  padding: .5rem 0;
+  background: #FECE3A;
+}
+.pokeWrapper .wp-header .logo {
+  display: inline-block;
+}
+.pokeWrapper .wp-header .logo img {
+  max-height: 100px;
+}
+.pokeWrapper .wp-header .pokeball {
+  float: right;
+  padding: 1.2rem;
+}
+.pokeWrapper .wp-header .pokeball img {
+  max-height: 70px;
+}

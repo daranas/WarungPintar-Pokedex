@@ -1,0 +1,7 @@
+.pokeWrapper .ui.card.card-pokemon {
+  margin-bottom: 1.5rem;
+}
+.pokeWrapper .ui.card>.content {
+  text-transform: capitalize;
+  text-align: center;
+}
