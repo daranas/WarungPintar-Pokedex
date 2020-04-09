@@ -14,7 +14,15 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props.location.search);
+    
     this.fetchPokemonData();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.name !== this.props.match.params.name) {
+      this.fetchPokemonData();
+    }
   }
 
   fetchMoreData = () => {
@@ -24,22 +32,21 @@ class HomePage extends Component {
   }
 
   fetchPokemonData = async (offset) => {
-    const setOffset = offset ? offset : 0;
     let regexPat = /\/pokemon\/(\d+)\//;
-
-    let res = await API.get(`/pokemon/?limit=${this.state.length}&offset=${setOffset}`);
-    let pokemon = res.data.results;
-
-    pokemon.map(pokemon => {
-      let id = pokemon.url.match(regexPat)[1];
-      return (pokemon["id"] = id);
+    let res = await API.get(`/type/${this.props.match.params.name}`);
+    let pokemon = [];
+    
+    res.data.pokemon.map(setData => {
+      let id = setData.pokemon.url.match(regexPat)[1];
+      let filterData = {
+        id: id,
+        name: setData.pokemon.name,
+        url: setData.pokemon.url
+      }
+      return pokemon.push(filterData)
     });
 
-    if (offset) {
-      this.setState({ pokemons: this.state.pokemons.concat(pokemon) });
-    } else {
-      this.setState({ pokemons: pokemon });
-    }
+    this.setState({ pokemons: pokemon });
   }
 
   render() {

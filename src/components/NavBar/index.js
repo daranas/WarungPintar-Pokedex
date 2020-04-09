@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Route, Link } from "react-router-dom";
 import { Dropdown, Menu } from 'semantic-ui-react'
 // element
@@ -32,9 +32,7 @@ const NavBar = props => (
     <Dropdown item icon='filter' simple>
       <Dropdown.Menu>
         {pokemonType.map((value, key) => (
-        <Dropdown.Item key={key}>
-        <a href={`/?type=` + value}>{value}</a>
-        </Dropdown.Item>
+        <Dropdown.Item key={key} as={Link} text={value} to={`/type/` + value}/>
         ))}
       </Dropdown.Menu>
     </Dropdown>

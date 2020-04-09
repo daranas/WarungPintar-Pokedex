@@ -3,6 +3,7 @@ import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
 import { Container } from 'semantic-ui-react'
 // components
 import Home from '../src/pages/Home';
+import Type from '../src/pages/Type';
 import Header from './components/Header';
 import NavBar from './components/NavBar'
 // css
@@ -12,13 +13,6 @@ import './App.css';
 import logo from './assets/images/wp.png';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      setFilters: []
-    };
-  }
-
   render() {
     return (
       <Router>
@@ -27,11 +21,8 @@ class App extends Component {
           <NavBar />
           <Container>
             <Switch>
-              <Route
-                exact
-                path="/"
-                render={() => <Home filterList={this.state.setFilters} />}
-              />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/type/:name" component={Type} />
             </Switch>
           </Container>
         </div>

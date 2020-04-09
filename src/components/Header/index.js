@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Link } from "react-router-dom";
 // images
 import pokeBall from '../../assets/images/pokeball.png';
 // css
@@ -8,7 +9,9 @@ const Header = props => {
   return (
     <header className="wp-header">
       <div className="logo">
-        <img src={props.logo} alt="Warung Pintar"/>
+        <Link to="/">
+          <img src={props.logo} alt="Warung Pintar"/>
+        </Link>
       </div>
       <div className="pokeball">
         <img src={pokeBall} className="pokeball-logo" alt="pokeball"/>
