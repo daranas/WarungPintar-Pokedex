@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Dropdown, Menu } from 'semantic-ui-react'
 // element
 import SearchBar from '../SearchBar'

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import { Search } from 'semantic-ui-react';
+import { Redirect } from "react-router-dom";
 import API from '../../helpers/API'
 // css
 import './index.css'
@@ -13,11 +14,15 @@ class SearchBar extends Component {
       isLoading: false,
       pokemons: [],
       results: [],
-      value: ''
+      value: '',
+      redirect: false
     };
   }
 
-  handleResultSelect = (e, { result }) => this.setState({ value: result.title })
+  handleResultSelect = (e, { result }) => {
+    this.setState({ value: result.title })
+    this.setState({ redirect: 'detail/' + result.title })
+  }
 
   handleSearchChange = (e, { value }) => {
     this.setState({ isLoading: true, value })
@@ -53,6 +58,10 @@ class SearchBar extends Component {
   };
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />
+    }
+    
     const { isLoading, value, results } = this.state
 
     return (

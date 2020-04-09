@@ -30,8 +30,6 @@ class Detail extends Component {
 
   componentDidMount() {
     this.fetchPokemonDetail();
-    
-    
   }
 
   fetchPokemonDetail = async (offset) => {
@@ -39,7 +37,6 @@ class Detail extends Component {
     const setLowerCase = pokeName.toLowerCase();
 
     let res = await API.get(`/pokemon/${setLowerCase}`);
-    console.log(res);
     this.setState({ pokemon: res.data });
   }
 
@@ -60,7 +57,7 @@ class Detail extends Component {
         <Card.Content extra>
         <div className='ui two buttons'>
         {pokemon.types.map(({ type }, i) => (
-          <Button basic color='green'>
+          <Button key={i} basic color='green'>
             {type.name}
           </Button>
         ))}
